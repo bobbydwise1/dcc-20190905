@@ -11,7 +11,15 @@ Implement a URL shortener with the following methods:
 Hint: What if we enter the same URL twice?
 */
 
+const shorten = (url) => {
+  let copied = url.slice() //Avoid Mutation
 
+  return copied
+}
+
+const restore = (short) => {
+  let copied = short.slice()
+}
 
 let test0 = 'www.testsite.com'
 
