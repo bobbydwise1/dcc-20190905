@@ -11,9 +11,22 @@ Implement a URL shortener with the following methods:
 Hint: What if we enter the same URL twice?
 */
 
+const hasher = (yourString) => {
+  const p = 31;
+  const m = 1000000009
+  let hash_value = 0;
+  let p_pow = 1;
+  for (char of yourString) {
+    hash_value = (hash_value + (char.charCodeAt(0) - 97 + 1 * p_pow) % m);
+    console.log(hash_value)
+    p_pow = (p_pow * p) % m;
+  }
+  return hash_value;
+}
+
 const shorten = (url) => {
   let copied = url.slice() //Avoid Mutation
-
+  
   return copied
 }
 
